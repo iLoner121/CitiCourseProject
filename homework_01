@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <link rel="stylesheet" type="text/css" href="../css/register.css"/>
+</head>
+<body>
+<h>Traditional Trade NLP Trade</h>
+<div class="test">
+        Client Name<input type="text" placeholder="Text input"/>
+        Ticker<input type="text" placeholder="Text input"/>
+        RIC<input type="text" placeholder="Text input"/>
+        Size<input type="text" placeholder="Text input"/>
+        Price<input type="text" placeholder="Text input"/>
+        Currency<input type="text" placeholder="Text input"/>
+        Issue Sector<input type="text" placeholder="Text input"/>
+        Salesperson<input type="text" placeholder="Text input"/>
+        HT/PT<select name="HT">
+            <option value="HT">HT</option>
+            <option value="PT">PT</option>
+        </select>
+        <input type="button" value="Buy"/>
+        <input type="button" value="Sell"/>
+    </div>
+    <div class="clear"></div>
+    
+
+
+<hr>
+<h>1D 1W 2W 1M 3M 6M 1Y YTD </h><br/>
+<h><b>Date Client Name Client Side Ticker RIC Size  Price  Notional USD Currency Issuer Sector Saleperson HT/PT </b></h><br/>
+
+<h>Date Client Name Buy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ticker Ric Size 1,300.24 1,300.24 1,300.78&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Currency Issuer Sector Salesperson HT/PT
+</h><br/>
+
+<h>Date Client Name Buy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ticker Ric Size 1,300.24 1,300.24 1,300.78&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Currency Issuer Sector Salesperson HT/PT
+</h><br/>
+
+<h>Date Client Name Buy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ticker Ric Size 1,300.24 1,300.24 1,300.78&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Currency Issuer Sector Salesperson HT/PT
+</h><br/>
+
+<h>Date Client Name Buy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ticker Ric Size 1,300.24 1,300.24 1,300.78&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Currency Issuer Sector Salesperson HT/PT
+</h><br/>
+
+<h>Total Buy:1,300.26 Total Sell:1,300.26 Net Quantity:1,300.26 Total Buy Notional:1,300.26 Total Sell Notional:1,300.26 Net Notional:1,300.26 Total Records:4 </h><br/>
+</body>
