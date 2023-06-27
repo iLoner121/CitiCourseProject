@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .background{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            display: -webkit-flex;
+            background-color: #0e1318;
+            flex-direction: column;
+        }
+
+        .title {
+            display: flex;
+            margin: 30px 60px 30px 30px;
+            
+        }
+        .search{
+            display: flex;
+            margin: 10px 60px 30px 30px;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .divide{
+            margin: 0 60px 30px 30px;
+        }
+        .tablediv{
+            margin: 0 60px 30px 30px;
+            background-color: #11171d;
+        }
+        .end{
+            display: flex;
+            margin: 0 60px 30px 30px;
+            flex-direction: row;
+
+        }
+
+        .title .inlineblock:first-child{
+            padding:7px 20px 7px 20px;
+            background-color: aliceblue;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        .title .inlineblock:not(:first-child):not(:last-child){
+            padding:7px 20px 7px 20px;
+            background-color: #11171d;
+        }
+        .title .inlineblock:last-child{
+            padding:7px 20px 7px 20px;
+            background-color: #11171d;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .darkgreen{
+            color: rgb(7, 56, 35);
+        }
+        .lightblue{
+            color: rgb(61, 142, 224);
+        }
+        .darkblue{
+            color: rgb(20, 20, 173);
+        }
+        .lightgreen{
+            color: rgb(29, 182, 136);
+        }
+        .transparent{
+            color: transparent;
+        }
+        .realygreen{
+            color:rgb(30, 226, 30);
+        }
+        .red{
+            color: red;
+        }
+        .darkred{
+            color: darkred;
+        }
+
+        .textinputer{
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+        }
+        .selector{
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+        }
+        .mybutton{
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+        }
+
+        .inputname{
+            font-size: medium;
+        }
+        .textinputer input{
+            outline-style: none;
+            border: 1px solid #5f5f5f;
+            border-radius: 3px;
+            padding: 10px 0;
+            width: 200px;
+            font-size: 17px;
+            margin-top: 5px;
+            background-color: transparent;
+            color: rgb(29, 182, 136);
+        }
+        .textinputer input::-webkit-input-placeholder{
+            color:rgb(29, 182, 136);
+            font-weight: 700;
+        }
+        
+        .search select{
+            border: 1px solid #5f5f5f;
+            border-radius: 3px;
+            padding: 10px 0;
+            width: 200px;
+            font-size: 17px;
+            margin-top: 5px;
+            background-color: transparent;
+            color: rgb(29, 182, 136);
+        }
+        .search select::-webkit-input-placeholder{
+            color:rgb(29, 182, 136);
+            font-weight: 700;
+        }
+
+        .mybutton input{
+            border-radius: 3px;
+            padding: 10px 0;
+            width: 90px;
+            font-size: 17px;
+            margin-top: 5px;
+            border-width: 0px;
+            border-color: transparent;
+            color: rgb(7, 56, 35);
+        }
+        .greenbutton input{
+            background-color: green;
+        }
+        .yellowbutton input{
+            background-color: yellow;
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th{
+            background-color: #1a222b;;
+            color: lightskyblue;
+            font-size: 700;
+            text-align: left;
+        }
+        td{
+            color: rgb(93, 194, 172);
+        }
+        tr,th{
+            border-width: 1px;
+            border-style: solid;
+            border-color: #425a74;
+        }
+        td,th{
+            border-width: 1px;
+            border-style: solid;
+            border-color: #425a74;
+            padding: 10px 10px;
+            font-size: 17px;
+            font-family: Verdana;
+        }
+        
+        .keyvalue{
+            margin: 5px 30px 0px 0px;
+            display: flex;
+            flex-direction: row;
+        }
+        .keyvalueright{
+            margin-left: auto;
+            display: flex;
+            flex-direction: row;
+        }
+
+    </style>  
+</head>
+<body>
+    <div class="background">
+        <div class="title">
+            <div class="inlineblock">
+                <div class="darkgreen">Traditional Trade</div>
+            </div>
+            <div class="inlineblock">
+                <div class="lightblue">NLP Trade</div>
+            </div>
+        </div>
+        <div class="lightgreen">
+            <div class="search">
+                <div class="textinputer">
+                    <div class="inputname">Client Name</div>
+                    <input type="text" placeholder="Text input"/>
+                </div>
+                <div class="textinputer">
+                    <div class="inputname">Ticker</div>
+                    <input type="text" placeholder="Text input"/>
+                </div>
+                <div class="textinputer">
+                    <div class="inputname">RIC</div>
+                    <input type="text" placeholder="Text input"/>
+                </div>
+                <div class="textinputer">
+                    <div class="inputname">Size</div>
+                    <input type="text" placeholder="Text input"/>
+                </div>
+                <div class="textinputer">
+                    <div class="inputname">Price</div>
+                    <input type="text" placeholder="Text input"/>
+                </div>
+                <div class="textinputer">
+                    <div class="inputname">Currency</div>
+                    <input type="text" placeholder="Text input"/>
+                </div>
+                <div class="textinputer">
+                    <div class="inputname">Issue Sector</div>
+                    <input type="text" placeholder="Text input"/>
+                </div>
+                <div class="textinputer">
+                    <div class="inputname">Salesperson</div>
+                    <input type="text" placeholder="Text input"/>
+                </div>
+                <div class="selector">
+                    <div class="inputname">HT/PT</div>
+                    <select name="HT/PT">
+                        <option value="HT">HT</option>
+                        <option value="PT">PT</option>
+                    </select>
+                </div>
+                <div class="greenbutton">
+                    <div class="mybutton">
+                        <div class="inputname"><div class="transparent">x</div></div>
+                        <input type="button" value="Buy"/>
+                    </div>
+                </div>
+                <div class="yellowbutton">
+                    <div class="mybutton">
+                        <div class="inputname"><div class="transparent">x</div></div>
+                        <input type="button" value="Sell"/>
+                    </div>
+                </div> 
+            </div>           
+        </div>
+        <div class="divide">
+            <HR>
+        </div>
+        <div class="title">
+            <div class="inlineblock">
+                <div class="darkgreen">1D</div>
+            </div>
+            <div class="inlineblock">
+                <div class="lightblue">1W</div>
+            </div>
+            <div class="inlineblock">
+                <div class="lightblue">2W</div>
+            </div>
+            <div class="inlineblock">
+                <div class="lightblue">1M</div>
+            </div>
+            <div class="inlineblock">
+                <div class="lightblue">3M</div>
+            </div>
+            <div class="inlineblock">
+                <div class="lightblue">6M</div>
+            </div>
+            <div class="inlineblock">
+                <div class="lightblue">1Y</div>
+            </div>
+            <div class="inlineblock">
+                <div class="lightblue">YTD</div>
+            </div>
+        </div>
+        <div class="tablediv">
+            <table class="table">
+                <tr>
+                    <th>Date</th>
+                    <th>Clinet</th>
+                    <th>Name</th>
+                    <th>Client Side</th>
+                    <th>Ticker</th>
+                    <th>RIC</th>
+                    <th>Size</th>
+                    <th>Price</th>
+                    <th>Notional USD</th>
+                    <th>Currency</th>
+                    <th>Issuer</th>
+                    <th>Sector</th>
+                    <th>Salesperson</th>
+                    <th>HT/PT</th>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td>Clinet</td>
+                    <td>Name</td>
+                    <td><div class="realygreen">Buy</div></td>
+                    <td>Ticker</td>
+                    <td>Ric</td>
+                    <td><div class="realygreen">Size</div></td>
+                    <td>1300.24</td>
+                    <td>1300.78</td>
+                    <td>Currency</td>
+                    <td>Issuer</td>
+                    <td>Sector</td>
+                    <td>Salesperson</td>
+                    <td>HT/PT</td>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td>Clinet</td>
+                    <td>Name</td>
+                    <td><div class="red">Sell</div></td>
+                    <td>Ticker</td>
+                    <td>Ric</td>
+                    <td><div class="red">Size</div></td>
+                    <td>1300.24</td>
+                    <td>1300.78</td>
+                    <td>Currency</td>
+                    <td>Issuer</td>
+                    <td>Sector</td>
+                    <td>Salesperson</td>
+                    <td>HT/PT</td>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td>Clinet</td>
+                    <td>Name</td>
+                    <td><div class="red">Sell</div></td>
+                    <td>Ticker</td>
+                    <td>Ric</td>
+                    <td><div class="red">Size</div></td>
+                    <td>1300.24</td>
+                    <td>1300.78</td>
+                    <td>Currency</td>
+                    <td>Issuer</td>
+                    <td>Sector</td>
+                    <td>Salesperson</td>
+                    <td>HT/PT</td>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td>Clinet</td>
+                    <td>Name</td>
+                    <td><div class="red">Sell</div></td>
+                    <td>Ticker</td>
+                    <td>Ric</td>
+                    <td><div class="red">Size</div></td>
+                    <td>1300.24</td>
+                    <td>1300.78</td>
+                    <td>Currency</td>
+                    <td>Issuer</td>
+                    <td>Sector</td>
+                    <td>Salesperson</td>
+                    <td>HT/PT</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="end">
+            <div class="keyvalue">
+                <div class="realygreen">TotalBuy：</div>
+                <div class="lightgreen">1300.26</div>
+            </div>
+            <div class="keyvalue">
+                <div class="darkred">TotalSell：</div>
+                <div class="lightgreen">1300.26</div>
+            </div>
+            <div class="keyvalue">
+                <div class="lightblue">Net Quantity：</div>
+                <div class="lightgreen">1300.26</div>
+            </div>
+            <div class="keyvalue">
+                <div class="realygreen">Total Buy Notional：</div>
+                <div class="lightgreen">1300.26</div>
+            </div>
+            <div class="keyvalue">
+                <div class="darkred">Total Sell Notional：</div>
+                <div class="lightgreen">1300.26</div>
+            </div>
+            <div class="keyvalue">
+                <div class="lightblue">Net Notional：</div>
+                <div class="lightgreen">1300.26</div>
+            </div>
+            <div class="keyvalueright">
+                <div class="darkblue">Total Records：</div>
+                <div class="lightgreen">4</div>
+            </div>
+        </div>
+
+    </div>
+    </body>
+</html>
