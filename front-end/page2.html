@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding:0;}
+        div{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        p {
+            background: cyan;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            width: calc((100% - 60px)/4);
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p:nth-child(n + 5) {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function f(){
+            try{
+                console.log("try");
+                throw "error";
+                return "try return";
+            }
+            catch(e){
+                console.log("catch"+e);
+                return "catch return";
+            }
+            finally{
+                console.log("finally");
+                return "finally return";
+            }
+        }
+        function t(){
+            var obj1={a:1,b:2,c:3};
+            var obj2={a:1,b:2,c:3};
+            for(var element in obj){
+                console.log(obj1==obj2);
+                console.log(obj1===obj2);
+                
+            }
+        }
+        function s(){
+            const months=['March','Jan','Feb','Dec'];
+            months.sort();
+            console.log(months);
+
+            const array1=[1,32,2342,2,2300];
+
+            array1.sort();
+            console.log(array1);
+            console.log(array1[3]);
+
+            array1.sort((a,b)=>a-b);
+            console.log(array1);
+            console.log(array1[3]);
+        }
+        
+    </script>
+    <div>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+        <p>1</p>
+    </div>
+    <button onclick="f()">button f()</button>
+    <button onclick="t()">button t()</button>
+    <button onclick="s()">button s()</button>
+    <div class="all">
+        <div class="col">
+            <input id="bookname" type="text" placeholder="name"/>
+            <button onclick="addbook()">add</button>
+        </div>
+    </div>
+    <div id="booklist"></div>
+    <script>
+        var i=0;
+        function addbook(){
+            var bookname=document.getElementById("bookname").value;
+            if(!bookname)
+                return;
+            var list = document.getElementById("booklist");
+            var book=document.createElement("div");
+            var br=document.createElement("br");
+            book.appendChild(br);
+
+            var div=document.createElement("label");
+            div.innerText=bookname;
+            book.appendChild(div);
+            var input=document.createElement("button");
+            window.event.stopPropagation();
+            input.setAttribute("onclick","removebook()");
+            input.innerText="remove";
+            book.appendChild(input);
+            list.appendChild(book);
+        }
+        function removebook(){
+            var e=window.event;
+            
+            var obj=e.target;
+            obj.parentNode.remove();
+        }
+    </script>
+    
+    
+</body>
+</html>

@@ -61,6 +61,7 @@
         }
         .lightblue{
             color: rgb(61, 142, 224);
+            pointer-events: none;
         }
         .darkblue{
             color: rgb(20, 20, 173);
@@ -194,7 +195,7 @@
 
     </style>  
 </head>
-<body>
+<body onload="load()">
     <div class="background">
         <div class="title">
             <div class="inlineblock">
@@ -205,42 +206,42 @@
             </div>
         </div>
         <div class="lightgreen">
-            <form class="search" onsubmit="return sell(this)">
+            <div class="search">
                 <div class="textinputer">
                     <div class="inputname">Client Name</div>
-                    <input type="text" placeholder="Text input"/>
+                    <input id="clientname" type="text" placeholder="Text input"/>
                 </div>
                 <div class="textinputer">
                     <div class="inputname">Ticker</div>
-                    <input id="getBSinfo" type="text" placeholder="Text input"/>
+                    <input id="ticker" type="text" placeholder="Text input"/>
                 </div>
                 <div class="textinputer">
                     <div class="inputname">RIC</div>
-                    <input id="getBSinfo" type="text" placeholder="Text input"/>
+                    <input id="ric" type="text" placeholder="Text input"/>
                 </div>
                 <div class="textinputer">
                     <div class="inputname">Size</div>
-                    <input id="getBSinfo" type="text" placeholder="Text input"/>
+                    <input id="size" type="text" placeholder="Text input"/>
                 </div>
                 <div class="textinputer">
                     <div class="inputname">Price</div>
-                    <input id="getBSinfo" type="text" placeholder="Text input"/>
+                    <input id="price" type="text" placeholder="Text input"/>
                 </div>
                 <div class="textinputer">
                     <div class="inputname">Currency</div>
-                    <input id="getBSinfo" type="text" placeholder="Text input"/>
+                    <input id="currency" type="text" placeholder="Text input"/>
                 </div>
                 <div class="textinputer">
                     <div class="inputname">Issue Sector</div>
-                    <input id="getBSinfo" type="text" placeholder="Text input"/>
+                    <input id="issuesector" type="text" placeholder="Text input"/>
                 </div>
                 <div class="textinputer">
                     <div class="inputname">Salesperson</div>
-                    <input id="getBSinfo" type="text" placeholder="Text input"/>
+                    <input id="salesperson" type="text" placeholder="Text input"/>
                 </div>
                 <div class="selector">
                     <div class="inputname">HT/PT</div>
-                    <select name="HT/PT">
+                    <select name="HT/PT" id="htpt">
                         <option value="HT">HT</option>
                         <option value="PT">PT</option>
                     </select>
@@ -249,130 +250,134 @@
                     <div class="greenbutton">
                         <div class="mybutton">
                             <div class="inputname"><div class="transparent">x</div></div>
-                            <input type="submit" value="Buy"/>
+                            <input type="button" value="Buy" onclick="buy()"/>
                         </div>
                     </div>
                     <div class="yellowbutton">
                         <div class="mybutton">
                             <div class="inputname"><div class="transparent">x</div></div>
-                            <input type="submit" value="Sell"/>
+                            <input type="button" value="Sell" onclick="sell()"/>
                         </div>
                     </div> 
                 </div>
                 
-            </form>           
+            </div>           
         </div>
         <div class="divide">
             <HR>
         </div>
         <div class="title">
-            <div class="inlineblock">
-                <div class="darkgreen">1D</div>
+            <div id=0 class="inlineblock" onclick="changeview()">
+                <div class="lightblue">1D</div>
             </div>
-            <div class="inlineblock">
+            <div id=1 class="inlineblock" onclick="changeview()">
                 <div class="lightblue">1W</div>
             </div>
-            <div class="inlineblock">
+            <div id=2 class="inlineblock" onclick="changeview()">
                 <div class="lightblue">2W</div>
             </div>
-            <div class="inlineblock">
+            <div id=3 class="inlineblock" onclick="changeview()">
                 <div class="lightblue">1M</div>
             </div>
-            <div class="inlineblock">
+            <div id=4 class="inlineblock" onclick="changeview()">
                 <div class="lightblue">3M</div>
             </div>
-            <div class="inlineblock">
+            <div id=5 class="inlineblock" onclick="changeview()">
                 <div class="lightblue">6M</div>
             </div>
-            <div class="inlineblock">
+            <div id=6 class="inlineblock" onclick="changeview()">
                 <div class="lightblue">1Y</div>
             </div>
-            <div class="inlineblock">
+            <div id=7 class="inlineblock" onclick="changeview()">
                 <div class="lightblue">YTD</div>
             </div>
         </div>
         <div class="tablediv">
             <table class="table">
-                <tr>
-                    <th>Date</th>
-                    <th>Clinet</th>
-                    <th>Name</th>
-                    <th>Client Side</th>
-                    <th>Ticker</th>
-                    <th>RIC</th>
-                    <th>Size</th>
-                    <th>Price</th>
-                    <th>Notional USD</th>
-                    <th>Currency</th>
-                    <th>Issuer</th>
-                    <th>Sector</th>
-                    <th>Salesperson</th>
-                    <th>HT/PT</th>
-                </tr>
-                <tr>
-                    <td>Date</td>
-                    <td>Clinet</td>
-                    <td>Name</td>
-                    <td><div class="realygreen">Buy</div></td>
-                    <td>Ticker</td>
-                    <td>Ric</td>
-                    <td><div class="realygreen">Size</div></td>
-                    <td>1300.24</td>
-                    <td>1300.78</td>
-                    <td>Currency</td>
-                    <td>Issuer</td>
-                    <td>Sector</td>
-                    <td>Salesperson</td>
-                    <td>HT/PT</td>
-                </tr>
-                <tr>
-                    <td>Date</td>
-                    <td>Clinet</td>
-                    <td>Name</td>
-                    <td><div class="red">Sell</div></td>
-                    <td>Ticker</td>
-                    <td>Ric</td>
-                    <td><div class="red">Size</div></td>
-                    <td>1300.24</td>
-                    <td>1300.78</td>
-                    <td>Currency</td>
-                    <td>Issuer</td>
-                    <td>Sector</td>
-                    <td>Salesperson</td>
-                    <td>HT/PT</td>
-                </tr>
-                <tr>
-                    <td>Date</td>
-                    <td>Clinet</td>
-                    <td>Name</td>
-                    <td><div class="red">Sell</div></td>
-                    <td>Ticker</td>
-                    <td>Ric</td>
-                    <td><div class="red">Size</div></td>
-                    <td>1300.24</td>
-                    <td>1300.78</td>
-                    <td>Currency</td>
-                    <td>Issuer</td>
-                    <td>Sector</td>
-                    <td>Salesperson</td>
-                    <td>HT/PT</td>
-                </tr>
-                <tr>
-                    <td>Date</td>
-                    <td>Clinet</td>
-                    <td>Name</td>
-                    <td><div class="red">Sell</div></td>
-                    <td>Ticker</td>
-                    <td>Ric</td>
-                    <td><div class="red">Size</div></td>
-                    <td>1300.24</td>
-                    <td>1300.78</td>
-                    <td>Currency</td>
-                    <td>Issuer</td>
-                    <td>Sector</td>
-                    <td>Salesperson</td>
-                    <td>HT/PT</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Clinet</th>
+                        <th>Name</th>
+                        <th>Client Side</th>
+                        <th>Ticker</th>
+                        <th>RIC</th>
+                        <th>Size</th>
+                        <th>Price</th>
+                        <th>Notional USD</th>
+                        <th>Currency</th>
+                        <th>Issuer</th>
+                        <th>Sector</th>
+                        <th>Salesperson</th>
+                        <th>HT/PT</th>
+                    </tr>
+                </thead>
+                <tbody id="tb">
+                    <tr>
+                        <td>Date</td>
+                        <td>Clinet</td>
+                        <td>Name</td>
+                        <td><div class="realygreen">Buy</div></td>
+                        <td>Ticker</td>
+                        <td>Ric</td>
+                        <td><div class="realygreen">Size</div></td>
+                        <td>1300.24</td>
+                        <td>1300.78</td>
+                        <td>Currency</td>
+                        <td>Issuer</td>
+                        <td>Sector</td>
+                        <td>Salesperson</td>
+                        <td>HT/PT</td>
+                    </tr>
+                    <tr>
+                        <td>Date</td>
+                        <td>Clinet</td>
+                        <td>Name</td>
+                        <td><div class="red">Sell</div></td>
+                        <td>Ticker</td>
+                        <td>Ric</td>
+                        <td><div class="red">Size</div></td>
+                        <td>1300.24</td>
+                        <td>1300.78</td>
+                        <td>Currency</td>
+                        <td>Issuer</td>
+                        <td>Sector</td>
+                        <td>Salesperson</td>
+                        <td>HT/PT</td>
+                    </tr>
+                    <tr>
+                        <td>Date</td>
+                        <td>Clinet</td>
+                        <td>Name</td>
+                        <td><div class="red">Sell</div></td>
+                        <td>Ticker</td>
+                        <td>Ric</td>
+                        <td><div class="red">Size</div></td>
+                        <td>1300.24</td>
+                        <td>1300.78</td>
+                        <td>Currency</td>
+                        <td>Issuer</td>
+                        <td>Sector</td>
+                        <td>Salesperson</td>
+                        <td>HT/PT</td>
+                    </tr>
+                    <tr>
+                        <td>Date</td>
+                        <td>Clinet</td>
+                        <td>Name</td>
+                        <td><div class="red">Sell</div></td>
+                        <td>Ticker</td>
+                        <td>Ric</td>
+                        <td><div class="red">Size</div></td>
+                        <td>1300.24</td>
+                        <td>1300.78</td>
+                        <td>Currency</td>
+                        <td>Issuer</td>
+                        <td>Sector</td>
+                        <td>Salesperson</td>
+                        <td>HT/PT</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
         
